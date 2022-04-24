@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/breedFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/meow_light_yellow"
+            android:elevation="4dp"
+            android:fitsSystemWindows="true"
+            android:titleTextColor="@android:color/white">
+
+            <ImageView
+                android:id="@+id/cat_detail_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/icon_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cat_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{selectedCat.name}"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cat_detail_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:src="@drawable/icon_paw"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/meow_very_light_yellow"
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:id="@+id/cat_detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="@{selectedCat.description}" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/meow_very_light_yellow"
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:id="@+id/cat_detail_origin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@{selectedCat.origin}" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cat_detail_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/meow_very_light_yellow"
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:id="@+id/cat_detail_wiki_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginVertical="10dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/click_for_cat_details"
+                android:textSize="20sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/icon_paw"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

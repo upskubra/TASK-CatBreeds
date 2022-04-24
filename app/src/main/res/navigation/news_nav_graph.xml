@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/breedListFragment">
+
+    <fragment
+        android:id="@+id/breedListFragment"
+        android:name="com.kubrayildirim.catbreeds.ui.breeds.BreedListFragment"
+        android:label="fragment_cat_breeds"
+        tools:layout="@layout/fragment_breed_list">
+        <action
+            android:id="@+id/action_catBreedListFragment_to_breedFragment"
+            app:destination="@id/breedFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_breedListFragment_to_searchBreedsFragment"
+            app:destination="@id/searchBreedsFragment" />
+        <action
+            android:id="@+id/action_breedListFragment_to_savedBreedFragment"
+            app:destination="@id/savedBreedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedBreedFragment"
+        android:name="com.kubrayildirim.catbreeds.ui.favoritedbreeds.FavoritedBreedsFragment"
+        android:label="fragment_saved_breeds"
+        tools:layout="@layout/fragment_favorited_breeds">
+        <action
+            android:id="@+id/action_savedBreedsFragment_to_breedFragment"
+            app:destination="@id/breedFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchBreedsFragment"
+        android:name="com.kubrayildirim.catbreeds.ui.searchbreeds.SearchBreedsFragment"
+        android:label="fragment_search_breed"
+        tools:layout="@layout/fragment_search_breeds">
+        <action
+            android:id="@+id/action_searchBreedsFragment_to_breedFragment"
+            app:destination="@id/breedFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/breedFragment"
+        android:name="com.kubrayildirim.catbreeds.ui.breeds.BreedFragment"
+        android:label="fragment_breed"
+        tools:layout="@layout/fragment_breed">
+        <argument
+            android:name="breed"
+            app:argType="com.kubrayildirim.catbreeds.data.model.Breed" />
+        <action
+            android:id="@+id/action_breedFragment_to_breedListFragment"
+            app:destination="@id/breedListFragment" />
+    </fragment>
+</navigation>
