@@ -15,4 +15,5 @@
     <string name="saved_breeds">Favorite Breeds</string>
     <string name="favorites_undo">Favorilerden kaldirmak icin sola kaydirabilirsiniz.</string>
     <string name="click_for_cat_details">Click For More Detail</string>
+    <string name="splash_text">Cat Breeds\n\nX\n\nKubra Yildirim</string>
 </resources>

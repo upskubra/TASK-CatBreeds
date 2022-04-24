@@ -13,9 +13,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CatBreeds">
-        <activity
-            android:name=".ui.SplashActivity"
-            android:exported="false" />
+
+        <activity android:name=".MySplashActivity"
+            android:exported="true">
+
+            <!-- Adding this filter here will start
+                SplashActivity when app starts   -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".ui.BreedActivity"
             android:exported="true">
